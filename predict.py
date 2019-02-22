@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-USAGE: /datarobot/trifacta_python /datarobot/predict.py AlvuLGmtQOYkFt1temri5i4Kc4QcwRi8 5c37fa5c11a57d006e647adb 2b9119cd-7945-bf9d-8397-1b6abd602f7e vijay@trifacta.com /datarobot/10k_diabetes_Predict.csv
+USAGE: /udfs/trifacta_python /udfs/predict.py AlvuLGmtQOYkFt1temri5i4Kc4QcwRi8 5c37fa5c11a57d006e647adb 2b9119cd-7945-bf9d-8397-1b6abd602f7e vijay@trifacta.com /udfs/10k_diabetes_Predict.csv
 {
 "API_TOKEN": "AlvuLGmtQOYkFt1temri5i4Kc4QcwRi8",
 "DEPLOYMENT_ID": "5c37fa5c11a57d006e647adb",
@@ -18,6 +18,9 @@ DEPLOYMENT_ID = sys.argv[2]
 DATAROBOT_KEY = sys.argv[3]
 USERNAME = sys.argv[4]
 INPUT_FILE = sys.argv[5]
+import os
+os.system('rm /udfs/'+os.path.basename(INPUT_FILE))
+os.system('hdfs dfs -copyToLocal {0} /udfs/'.format(INPUT_FILE))
 # Usage: python datarobot-predict.py <input-file.csv>
 
 # This example uses the requests library which you can install with:
