@@ -19,7 +19,8 @@ DATAROBOT_KEY = sys.argv[3]
 USERNAME = sys.argv[4]
 INPUT_FILE = sys.argv[5]
 import os
-os.system('rm /udfs/'+os.path.basename(INPUT_FILE))
+filename = '/udfs/'+os.path.basename(INPUT_FILE)
+os.system('rm '+filename)
 os.system('hdfs dfs -copyToLocal {0} /udfs/'.format(INPUT_FILE))
 # Usage: python datarobot-predict.py <input-file.csv>
 
@@ -33,7 +34,7 @@ import json
 # Note: The charset should match the contents of the file.
 headers = {'Content-Type': 'text/plain; charset=UTF-8', 'datarobot-key': DATAROBOT_KEY}
 
-data = open(INPUT_FILE, 'rb').read()
+data = open(filename, 'rb').read()
 
 # Make predictions on your data
 # The URL has the following format:
