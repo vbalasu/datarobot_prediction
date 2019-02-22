@@ -11,5 +11,5 @@ else
   cp DatarobotPredict.jar /udfs/
   ln -s /usr/bin/python3 /udfs/trifacta_python
   ln -s /root/bitbucket/datarobot_prediction/predict.py /udfs/predict.py
-  service trifacta restart
+  #service trifacta restart
 fi
