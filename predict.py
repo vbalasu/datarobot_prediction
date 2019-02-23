@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 '''
-USAGE: /udfs/trifacta_python /udfs/predict.py AlvuLGmtQOYkFt1temri5i4Kc4QcwRi8 5c37fa5c11a57d006e647adb 2b9119cd-7945-bf9d-8397-1b6abd602f7e vijay@trifacta.com /udfs/10k_diabetes_Predict.csv
-{
-"API_TOKEN": "AlvuLGmtQOYkFt1temri5i4Kc4QcwRi8",
-"DEPLOYMENT_ID": "5c37fa5c11a57d006e647adb",
-"DATAROBOT_KEY": "2b9119cd-7945-bf9d-8397-1b6abd602f7e",
-"USERNAME": "vijay@trifacta.com",
-"INPUT_FILE": "10k_diabetes_Predict.csv"
-}
+USAGE: /udfs/trifacta_python /udfs/predict.py <API_TOKEN> <DEPLOYMENT_ID> <DATAROBOT_KEY> <USERNAME> <INPUT_FILE> 
+See config.json.gpg for keys
 '''
 import sys
 if len(sys.argv) != 6:
