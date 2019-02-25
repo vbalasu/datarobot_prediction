@@ -10,7 +10,7 @@ This post describes how to use Trifacta to *apply* the DataRobot prediction mode
 
 The overall flow is as follows:
 
-> ### A. Read new patient data &rarr; B. Call DataRobot scoring API &rarr; C. Parse and merge results
+> A. Read new patient data &rarr; B. Call DataRobot scoring API &rarr; C. Parse and merge results
 
 ### A. Read New Patient Data
 
@@ -18,7 +18,22 @@ In Trifacta, create a new flow and import your prediction dataset into it.
 
 ![Import data](01_import_data.gif)
 
+Once imported, copy the hdfs file path and insert it into the recipe.
+
+![Add filename](02_add_filename.gif)
+
 ### B. Call DataRobot Scoring API
+
+To call the DataRobot API, you need the following information:
+
+1. API Token
+2. Deployment ID
+3. DataRobot Key
+4. Username
+
+Add a recipe step for UDF (invoke external function) and choose DatarobotPredict. Choose the filename column and enter an argument in the form API_TOKEN=api_token,DEPLOYMENT_ID=deployment_id,DATAROBOT_KEY=datarobot_key,USERNAME=username
+
+![UDF](03_udf.gif)
 
 ### C. Parse and Merge Results
 
