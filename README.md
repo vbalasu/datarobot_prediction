@@ -10,9 +10,13 @@ This post describes how to use Trifacta to *apply* the DataRobot prediction mode
 
 The overall flow is as follows:
 
-> ### A. Read new patient data &rightarrow; B. Call DataRobot scoring API &rightarrow; C. Parse and merge results
+> ### A. Read new patient data &rarr; B. Call DataRobot scoring API &rarr; C. Parse and merge results
 
 ### A. Read New Patient Data
+
+In Trifacta, create a new flow and import your prediction dataset into it.
+
+![Import data](01_import_data.gif)
 
 ### B. Call DataRobot Scoring API
 
