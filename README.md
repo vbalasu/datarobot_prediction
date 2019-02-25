@@ -1,8 +1,22 @@
 # How To Use Trifacta For DataRobot Prediction
 
-Trifacta is a world-class data preparation software platform, and DataRobot is a powerful automated machine learning platform that makes it fast and easy to build and deploy accurate predictive models.
+> Which patients are more likely to be re-admitted to the hospital?
 
-This page describes how to use Trifacta to *apply* the DataRobot prediction model to new data. It assumes that the DataRobot model has already been trained, and is available via an API call to https://app.datarobot.com. 
+If only you could know the answer to the above question, you can take steps to greatly improve patient outcomes and deliver cost-effective care.
+
+In this post, we will explore how to use Trifacta in conjunction with DataRobot to evaluate new patients for their risk of re-admission. Trifacta is a world-class data preparation software platform, and DataRobot is a powerful automated machine learning platform that makes it fast and easy to build and deploy accurate predictive models.
+
+This post describes how to use Trifacta to *apply* the DataRobot prediction model to new data. It assumes that a DataRobot model to predict re-admission risk has already been trained, and is available via an API call to https://app.datarobot.com. 
+
+The overall flow is as follows:
+
+> ### A. Read new patient data &rightarrow; B. Call DataRobot scoring API &rightarrow; C. Parse and merge results
+
+### A. Read New Patient Data
+
+### B. Call DataRobot Scoring API
+
+### C. Parse and Merge Results
 
 ### Additional Links
 
