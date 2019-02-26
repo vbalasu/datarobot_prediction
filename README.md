@@ -37,6 +37,10 @@ Add a recipe step for UDF (invoke external function) and choose DatarobotPredict
 
 ### C. Parse and Merge Results
 
+![Parse JSON](04_parse_json.gif)
+
+![Merge Output](05_merge_output.gif)
+
 ### Additional Links
 
 If you are interested in how to prepare training data to feed DataRobot, please watch [this video](https://youtu.be/DafaYnJe_cs). 
