@@ -1,0 +1,8 @@
+derive type: single value: 'hdfs:\/\/\/trifacta\/uploads\/1\/4fe63a2b-764b-4215-b14e-ce2b6bb6756c\/10k_diabetes_Predict.csv' as: 'filename'
+drop col: filename action: Keep
+deduplicate
+udf name: 'DatarobotPredict' col: filename args: 'API_TOKEN=AlvuLGmtQOYkFt1temri5i4Kc4QcwRi8,DEPLOYMENT_ID=5c37fa5c11a57d006e647adb,DATAROBOT_KEY=2b9119cd-7945-bf9d-8397-1b6abd602f7e,USERNAME=vijay@trifacta.com' as: 'DatarobotPredict'
+unnest col: DatarobotPredict keys: 'data' pluck: true markLineage: false
+flatten col: data
+unnest col: data keys: 'rowId','prediction' pluck: false markLineage: false
+drop col: rowId,prediction action: Keep
