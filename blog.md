@@ -30,11 +30,11 @@ The next step is to build a production workflow that processes incoming data and
 
 In Trifacta, create a new flow and import your data. In this case, we load a CSV file containing details of new patients.
 
-![Import data](01_import_data.gif)
+![Import data](01_import_file.png)
 
 Once imported, you can access the URL path to the file. Copy the URL and insert it into the recipe as shown below.
 
-![Add filename](02_add_filename.gif)
+![Add filename](02_add_filename.png)
 
 To call the DataRobot API, you need the following information:
 
@@ -45,19 +45,19 @@ To call the DataRobot API, you need the following information:
 
 Add a recipe step for UDF (invoke external function) and choose DatarobotPredict. Choose the filename column and enter an argument in the form API_TOKEN=api_token,DEPLOYMENT_ID=deployment_id,DATAROBOT_KEY=datarobot_key,USERNAME=username
 
-![UDF](03_udf.gif)
+![UDF](03_udf.png)
 
 <br>
 The results of the DataRobot API call are returned in JSON format. Now use Trifacta to parse out key pieces of information into their own fields. Use the flatten transformation to create individual rows in the output. Choose the prediction column along with a row identifier.
 
-![Parse JSON](04_parse_json.gif)
+![Parse JSON](04_parse_json.png)
 
 <br>
 Now merge the prediction results with the original data to produce a combined output. This is accomplished by doing an inner join on rowId. If needed, you can perform additional transformations on this data to support analytics. 
 
 You can now use the output of this process to drive decision making. In this case, patients having a higher readmission risk may be assigned to a nurse for additional checkups and preventive measures. All decisions and actions should be carefully recorded for later analysis.
 
-![Merge Output](05_merge_output.gif)
+![Merge Output](05_merge_output.png)
 
 <br>
 After building the flow, you operationalize it using Trifacta. You do this by setting up a recurring schedule to process new patients on a daily basis. This pipeline feeds data back to the hospital's systems for the next step.
