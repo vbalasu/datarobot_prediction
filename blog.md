@@ -4,7 +4,7 @@ So you have successfully trained a machine learning model after choosing the bes
 
 Not quite!
 
-The best ML algorithms and models are of no use until you actually apply them to make predictions on future outcomes and incorporate those predictions into your decision making. The business value of ML is realized only when it alters behavior to produce positive outcomes.
+The best ML algorithms and models are of no use until you actually apply them to make predictions on future outcomes. Then you must incorporate those predictions into your decision making. The business value of ML is realized only when it alters behavior to produce positive outcomes.
 
 In this post, we look at how to derive value from a DataRobot model that is designed to answer the following question:
 
@@ -48,14 +48,14 @@ Add a recipe step for UDF (invoke external function) and choose DatarobotPredict
 ![UDF](03_udf.gif)
 
 <br>
-The results of the DataRobot API call are returned in JSON format. You use Trifacta to parse out key pieces of information into their own fields. Use the flatten transformation to create individual rows in the output. Choose the prediction column along with a row identifier.
+The results of the DataRobot API call are returned in JSON format. Now use Trifacta to parse out key pieces of information into their own fields. Use the flatten transformation to create individual rows in the output. Choose the prediction column along with a row identifier.
 
 ![Parse JSON](04_parse_json.gif)
 
 <br>
 Now merge the prediction results with the original data to produce a combined output. This is accomplished by doing an inner join on rowId. If needed, you can perform additional transformations on this data to support analytics. 
 
-You would now use the output of this process to drive decision making. In this case, patients having a higher readmission risk may be assigned to a nurse for additional checkups and preventive measures. All decisions and actions should be carefully recorded for later analysis.
+You can now use the output of this process to drive decision making. In this case, patients having a higher readmission risk may be assigned to a nurse for additional checkups and preventive measures. All decisions and actions should be carefully recorded for later analysis.
 
 ![Merge Output](05_merge_output.gif)
 
@@ -75,8 +75,9 @@ The process doesn't end here. To derive continued benefits from your ML initiati
 <br>
 ### Additional Links
 
-The Trifacta recipes and source code used in this post are [available on Github](https://github.com/vbalasu/datarobot_prediction)
+The Trifacta recipes and source code used in this post are [available on Github](https://github.com/vbalasu/datarobot_prediction). A video recording of the process is [available on YouTube](https://youtu.be/EGxuNmAfnM0). 
 
 If you are interested in how to prepare training data to feed DataRobot, please watch [this video](https://youtu.be/DafaYnJe_cs). 
 
 For more details on the hospital readmission risk model and its implementation in DataRobot, see [this page](https://www.datarobot.com/use-cases/hospital-readmission-risk/).
+
